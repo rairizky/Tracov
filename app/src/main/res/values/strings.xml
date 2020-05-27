@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Tracov</string>
+    <string name="tracker_covid19_application">Tracker COVID19 application</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="_0">0</string>
+    <string name="death">Death</string>
+    <string name="recovered">Recovered</string>
+    <string name="global_data">Global Data</string>
+    <string name="search_country">List Country</string>
+    <string name="back">Back</string>
 </resources>

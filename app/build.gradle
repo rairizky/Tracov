@@ -47,19 +47,25 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-
     // anko
     implementation "org.jetbrains.anko:anko:$anko_version"
-
     //library retro
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
     //gson
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
     //logging interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
-
     // skeleton view
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    // UI & Graphic
+    implementation 'com.github.ursimon.CounterTextView:library-rxjava1:1.0.2'
+    implementation 'com.github.ursimon.CounterTextView:library-common:1.0.2'
+    implementation 'com.github.majorkik:SparkLineLayout:1.0.1'
+
+    // material
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
 }

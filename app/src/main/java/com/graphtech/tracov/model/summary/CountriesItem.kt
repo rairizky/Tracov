@@ -1,8 +1,11 @@
 package com.graphtech.tracov.model.summary
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class CountriesItem(
 
 	@field:SerializedName("NewRecovered")
@@ -34,4 +37,4 @@ data class CountriesItem(
 
 	@field:SerializedName("Date")
 	val date: String? = null
-)
+) : Parcelable

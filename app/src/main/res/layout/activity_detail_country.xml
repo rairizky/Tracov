@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.DetailCountryActivity">
     <LinearLayout
+        android:id="@+id/intentBackFromDetailSummary"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
         android:padding="16dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+        <ImageView
+            android:src="@drawable/ic_arrow_back_white_24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center"
+            android:layout_width="27dp"
+            android:layout_height="27dp"/>
         <TextView
-            android:text="@string/app_name"
-            android:textSize="40sp"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:text="@string/tracker_covid19_application"
-            android:textAlignment="center"
+            android:text="@string/back"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:layout_gravity="center"
             android:textColor="@color/colorWhite"
-            android:fontFamily="@font/poppins_light"
-            android:textSize="20sp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
@@ -43,8 +45,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/countryNameHeader"
+                    tools:text="Indonesia"
                     android:layout_marginTop="16dp"
-                    android:text="@string/global_data"
                     android:textColor="@color/colorWhite"
                     android:textAlignment="center"
                     android:fontFamily="@font/poppins_semi_bold"
@@ -53,7 +56,7 @@
                     android:layout_height="wrap_content"/>
                 <GridLayout
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="24dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:columnCount="3"
@@ -76,7 +79,7 @@
                                 android:layout_height="wrap_content"/>
                             <cz.ursiny.countertextview.library.CounterTextView
                                 android:text="@string/_0"
-                                android:id="@+id/globalConfirmed"
+                                android:id="@+id/countryConfirmed"
                                 app:numberFormat="true"
                                 app:speed="80"
                                 android:textSize="20sp"
@@ -104,7 +107,7 @@
                                 android:layout_height="wrap_content"/>
                             <cz.ursiny.countertextview.library.CounterTextView
                                 android:text="@string/_0"
-                                android:id="@+id/globalDeath"
+                                android:id="@+id/countryDeath"
                                 app:numberFormat="true"
                                 app:speed="80"
                                 android:textSize="20sp"
@@ -132,7 +135,7 @@
                                 android:layout_height="wrap_content"/>
                             <cz.ursiny.countertextview.library.CounterTextView
                                 android:text="@string/_0"
-                                android:id="@+id/globalRecovered"
+                                android:id="@+id/countryRecovered"
                                 app:numberFormat="true"
                                 app:speed="80"
                                 android:textSize="20sp"
@@ -144,51 +147,38 @@
                         </LinearLayout>
                     </FrameLayout>
                 </GridLayout>
+                <View
+                    android:alpha="0.4"
+                    android:background="@color/colorAccent"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:src="@drawable/ic_history_white_24dp"
+                        android:tint="@color/colorAccent"
+                        android:layout_width="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_gravity="center"
+                        android:layout_height="20dp"/>
+                    <TextView
+                        android:id="@+id/countryDateHeader"
+                        tools:text="2020-05-27"
+                        android:textColor="@color/colorAccent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-    <TextView
-        android:text="@string/search_country"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins_light"
-        android:textColor="@color/colorAccent"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmerSummaryCountry"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:padding="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <View
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/placeholder_text_item"
-                android:layout_width="150dp"
-                android:layout_height="20dp"/>
-            <View
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/placeholder_text_item"
-                android:layout_width="150dp"
-                android:layout_height="20dp"/>
-            <View
-                android:layout_marginStart="16dp"
-                android:background="@drawable/placeholder_text_item"
-                android:layout_width="150dp"
-                android:layout_height="20dp"/>
-        </LinearLayout>
-    </com.facebook.shimmer.ShimmerFrameLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSummaryCountry"
-        tools:listitem="@layout/item_summary_country"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 </LinearLayout>
