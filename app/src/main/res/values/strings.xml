@@ -8,4 +8,5 @@
     <string name="global_data">Global Data</string>
     <string name="search_country">List Country</string>
     <string name="back">Back</string>
+    <string name="data_per_day">COVID19 start from</string>
 </resources>
